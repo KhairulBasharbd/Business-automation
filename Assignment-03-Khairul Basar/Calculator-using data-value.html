@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Calculator</title>
+
+    <style>
+        body {
+            background-color: #f1f1f1;
+            font-family: Arial, sans-serif;
+        }
+
+        .calculator {
+            width: 350px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .screen {
+            height: 50px;
+            text-align: right;
+            font-size: 1.5rem;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #e9ecef;
+        }
+
+        .btn-custom {
+            font-size: 1.2rem;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .btn-ac {
+            background-color: #f87171;
+            color: #fff;
+        }
+
+        .btn-equal {
+            background-color: #34d399;
+            color: #fff;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="calculator">
+
+            <!-- row for screen -->
+            <div class="mb-3">
+                <input type="text" id="screen" class="screen" readonly value="">
+            </div>
+
+            <!-- row for AC, /, *, - -->
+            <div class="row g-2">
+                <div class="col-3">
+                    <button class="btn btn-ac btn-custom w-100" id="clear">AC</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-secondary btn-custom w-100" id="/" data-value="/">&divide;</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-secondary btn-custom w-100" id="*" data-value="*">&times;</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-secondary btn-custom w-100" id="-" data-value="-">-</button>
+                </div>
+            </div>
+
+            <!-- row for 7, 8, 9, + -->
+            <div class="row g-2 mt-2">
+                <div class="col-3">
+                    <button class="btn btn-secondary btn-custom w-100" id="7" data-value="7">7</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-secondary btn-custom w-100" id="8" data-value="8">8</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-secondary btn-custom w-100" id="9" data-value="9">9</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-secondary btn-custom w-100" id="+" data-value="+">+</button>
+                </div>
+            </div>
+
+            <!-- row for 4, 5, 6, . -->
+            <div class="row g-2 mt-2">
+                <div class="col-3">
+                    <button class="btn btn-secondary btn-custom w-100" id="4" data-value="4">4</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-secondary btn-custom w-100" id="5" data-value="5">5</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-secondary btn-custom w-100" id="6" data-value="6">6</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-secondary btn-custom w-100" id="." data-value=".">.</button>
+                </div>
+            </div>
+
+            <!-- row for 1, 2, 3, = -->
+            <div class="row g-2 mt-2">
+                <div class="col-3">
+                    <button class="btn btn-secondary btn-custom w-100" id="1" data-value="1">1</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-secondary btn-custom w-100" id="2" data-value="2">2</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-secondary btn-custom w-100" id="3" data-value="3">3</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-equal btn-custom w-100" id="equals">=</button>
+                </div>
+            </div>
+
+
+            <!-- row for 0 -->
+            <div class="row g-2 mt-2">
+                <div class="col-6">
+                    <button class="btn btn-secondary btn-custom w-100" id="0" data-value="0">0</button>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+
+
+</body>
+<script src = "script.js"> </script>
+
+</html>
