@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Website Layout</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: grid;
+      grid-template-areas:
+        "header header header"
+        "sidebar body bio"
+        "footer footer footer";
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-rows: auto 1fr auto;
+      gap: 10px;
+      min-height: 100vh;
+    }
+
+    header {
+      grid-area: header;
+      background-color: #7090d0;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .logo {
+      display: inline-block;
+      background-color: white;
+      color: #4caf50;
+      padding: 10px;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+
+    .sidebar {
+      /* grid-area: sidebar; */
+      background-color: #bceae9;
+      padding: 15px;
+    }
+
+    .body {
+      grid-area: body;
+      background-color: #e8f5e9;
+      padding: 15px;
+    }
+
+    .bio {
+      grid-area: bio;
+      background-color: #e7e1ab;
+      padding: 15px;
+      height: 50%;
+      gap: 10px;
+    }
+    .notice{
+      grid-area: bio;
+      background-color: #bab258;
+      padding: 15px;
+      gap: 10px;
+      height: 50%;
+
+    }
+
+    footer {
+      grid-area: footer;
+      background-color: #4caf50;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="logo">Logo</span>
+      Website Header
+    </header>
+    <div class="sidebar">
+      Sidebar Content
+    </div>
+    <div class="body">
+      Main Body Content
+    </div>
+    <div >
+      <div class="bio">
+        Biography Section
+      </div>
+      <div class="notice">
+        Notice 
+      </div>
+    </div>
+    <footer>
+      Footer Content
+    </footer>
+  </div>
+</body>
+</html>
