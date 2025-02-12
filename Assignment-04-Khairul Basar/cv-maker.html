@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Maker Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
+        integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"
+        integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">CV Form</h2>
+
+        <!-- Personal Information -->
+        <div class="card mb-4">
+            <div class="card-header bg-secondary text-light">Personal Information</div>
+            <div class="card-body">
+                <form id="cvForm">
+                    <div class="row mb-3">
+                        <div class="d-flex gap-3 col-md-6">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="d-flex gap-3 col-md-6">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="d-flex gap-3 col-md-6">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="text" id="phone" name="phone" class="form-control" required>
+                        </div>
+                        <div class="d-flex gap-3 col-md-6">
+                            <label for="dob" class="form-label">Date of Birth</label>
+                            <input type="date" id="dob" name="dob" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="d-flex col-md-6 gap-3 mb-3">
+                            <label for="division" class="form-label">Division</label>
+                            <select id="division" class="form-control" required>
+                                <option value="">Select Division</option>
+                            </select>
+                        </div>
+                        <div class="d-flex col-md-6 gap-3 mb-3">
+                            <label for="district" class="form-label">District</label>
+                            <select id="district" class="form-control" required>
+                                <option value="">Select District</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3 mb-3">
+                        <label for="address" class="form-label">Address</label>
+                        <textarea id="address" name="address" class="form-control" rows="2" required></textarea>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="card mb-4">
+            <div class="card-header bg-secondary text-light">Education</div>
+            <div class="card-body">
+                <table class="table table-bordered" id="educationTable">
+                    <thead>
+                        <tr>
+                            <th>Qualification</th>
+                            <th>Institution</th>
+                            <th>Graduation Year</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" name="qualification[]" class="form-control" required></td>
+                            <td><input type="text" name="institution[]" class="form-control" required></td>
+                            <td><input type="number" name="gradYear[]" class="form-control" required></td>
+                            <td><button type="button" class="btn btn-success btn-sm" id="addEducationRow">Add</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="card mb-4">
+            <div class="card-header bg-secondary text-light">Skills</div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="skills" class="form-label">Select Skills</label>
+                        <select id="skills" name="skills[]" class="form-control select2" multiple="multiple" required>
+                            <option value="Programming">Programming</option>
+                            <option value="Web Development">Web Development</option>
+                            <option value="Data Analysis">Data Analysis</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Work Experience -->
+        <div class="card mb-4">
+            <div class="card-header bg-secondary text-light">Work Experience</div>
+            <div class="card-body">
+                <table class="table table-bordered" id="experienceTable">
+                    <thead>
+                        <tr>
+                            <th>Job Title</th>
+                            <th>Company Name</th>
+                            <th>Duration</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" name="jobTitle[]" class="form-control" required></td>
+                            <td><input type="text" name="companyName[]" class="form-control" required></td>
+                            <td><input type="text" name="duration[]" class="form-control" required></td>
+                            <td><button type="button" class="btn btn-success btn-sm" id="addExperienceRow">Add</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="card mb-4">
+            <div class="card-header bg-secondary text-light">Languages</div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="languages" class="form-label">Select Languages</label>
+                        <select id="languages" name="languages[]" class="form-control select2" multiple="multiple"
+                            required>
+                            <option value="English">English</option>
+                            <option value="Bengali">Bengali</option>
+                            <option value="Hindi">Hindi</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+    </div>
+
+    <script src="jquery.js"></script>
+</body>
+
+</html>
